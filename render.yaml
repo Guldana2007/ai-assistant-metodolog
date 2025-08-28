@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ai-assistant-demo
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main_ollama_site_lang_bge3:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
